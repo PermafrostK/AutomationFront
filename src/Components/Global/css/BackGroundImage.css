@@ -1,7 +1,8 @@
-body{
-    margin:0px;
+body {
+    margin: 0px;
 }
-#BackGroundImage{
+
+#BackGroundImage {
     background-image: url('../img/BackGroundImage.jpg');
     background-size: cover;
     background-position: center center;
@@ -9,11 +10,9 @@ body{
     top: 0;
     bottom: 0;
     height: 100vh;
-    z-index: -10;
 }
 
-#BackGroundImage-Overlay{
-
+#BackGroundImage-Overlay {
     position: absolute;
     top: 0;
     bottom: 0;
@@ -21,5 +20,4 @@ body{
     width: 100%;
     z-index: -5;
     background-color: rgba(0, 0, 0, 0.5);
-
 }

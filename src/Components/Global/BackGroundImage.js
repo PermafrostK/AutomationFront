@@ -17,17 +17,17 @@ import items from '../../Data/Menu';
 class BackGroundImage extends Component {
     static propTypes = {
         prebody: PropTypes.object.isRequired
-      };
+    };
     render() {
-        
+
         const { prebody } = this.props;
         return (
-            <div id="BackGroundImage">
-                <div id="BackGroundImage-Overlay">
-                    <Header title="Automation Project" items={items} />
-                    <Content body={prebody} />
-                    <Footer />
 
+            <div id="BackGroundImage">
+                <Header title="Automation Project" items={items} />
+                <Content body={prebody} />
+                <Footer />
+                <div id="BackGroundImage-Overlay">
                 </div>
             </div>
         );
