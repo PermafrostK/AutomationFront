@@ -8,12 +8,12 @@ import './css/Content.css';
 class Content extends Component {
     static propTypes = {
         body: PropTypes.object.isRequired
-      };
+    };
     render() {
-        const{body} = this.props;
+        const { body } = this.props;
         return (
             <div className="Content">
-                {body}
+                <div className="Content-color"> {body}</div>
             </div>
         );
     }
