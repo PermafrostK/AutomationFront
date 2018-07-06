@@ -1,5 +1,6 @@
 //Dependencies
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 //Components
 import Header from './Global/Header';
@@ -10,6 +11,9 @@ import Footer from './Global/Footer';
 import items from '../Data/Menu';
 
 class App extends Component {
+  static propTypes={
+    
+  }
   render() {
     return (
       <div className="App">
