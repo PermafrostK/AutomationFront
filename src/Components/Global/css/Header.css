@@ -13,6 +13,17 @@
   height: 80px;
 }
 
+.Menu{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.Menu li{
+display: inline;
+padding-right: 18px;
+}
+
 
 
 @keyframes App-logo-spin {
