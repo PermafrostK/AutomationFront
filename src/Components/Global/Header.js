@@ -9,8 +9,8 @@ import './css/Header.css';
 
 class Header extends Component {
     static propTypes = {
-        Title: PropTypes.string.isRequired,
-        Items: PropTypes.array.isRequired
+        title: PropTypes.string.isRequired,
+        items: PropTypes.array.isRequired
     };
 
     render() {
