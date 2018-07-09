@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import ButtonFloat from './Modal/ButtonFloat';
 import Modaladd from './Modal/ModalAdd';
 
 class Home extends Component {
@@ -9,10 +8,9 @@ class Home extends Component {
             <div className="Home">
 
                 <MuiThemeProvider>
-                    <ButtonFloat />
+                    
                     <Modaladd />
-                </MuiThemeProvider>
-                
+                </MuiThemeProvider>                
                 <h1>Home Page</h1>
             </div>
         );

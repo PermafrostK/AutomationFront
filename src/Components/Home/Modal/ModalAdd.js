@@ -5,6 +5,7 @@ import FloatingActionButton from 'material-ui/FloatingActionButton';
 import ContentAdd from 'material-ui/svg-icons/content/add';
 import SelectField from 'material-ui/SelectField';
 import MenuItem from 'material-ui/MenuItem';
+import ButtonFloat from './ButtonFloat';
 
 export default class DialogExampleSimple extends React.Component {
 
@@ -13,13 +14,10 @@ export default class DialogExampleSimple extends React.Component {
         value: 1
     };
 
-    handleChange = (event, index, value) => 
-    this.setState({ value });
-    
-    
-
-    handledVale = (event, index, value)=>
-    console.log(this.value  );
+    handleChange = (event, index, value) => {
+        this.setState({ value });
+        console.log(value);
+    }
 
     handleOpen = () => {
         this.setState({ open: true });
@@ -29,7 +27,12 @@ export default class DialogExampleSimple extends React.Component {
         this.setState({ open: false });
     };
 
+    handledSubmit = () => {
+        console.log(this.state.value);
+    };
+
     render() {
+        <ButtonFloat />
         const actions = [
             <FlatButton
                 label="Cancel"
@@ -40,14 +43,13 @@ export default class DialogExampleSimple extends React.Component {
                 label="Submit"
                 primary={true}
                 keyboardFocused={true}
-                onClick={this.handleClose}
+                onClick={this.handledSubmit}
             />,
         ];
 
         return (
 
             <div>
-                {/* <RaisedButton label="Dialog" onClick={this.handleOpen} /> */}
                 <div>
                     <FloatingActionButton onClick={this.handleOpen}>
                         <ContentAdd />
@@ -61,17 +63,12 @@ export default class DialogExampleSimple extends React.Component {
                         open={this.state.open}
                         onRequestClose={this.handleClose}
                     >
-                        <SelectField
-                            floatingLabelText="Frequency"
-                            value={this.state.value}
-                            onChange={this.handleChange}
-                            onclick={this.handledVale}
-                        >
+                        <SelectField floatingLabelText="Frequency" value={this.state.value} onChange={this.handleChange} >
                             <MenuItem value={1} primaryText="Never" />
                             <MenuItem value={2} primaryText="Every Night" />
                             <MenuItem value={3} primaryText="Weeknights" />
-                            <MenuItem value={4} primaryText="Weekends" />
-                            <MenuItem value={5} primaryText="Weekly" />
+                            <MenuItem value={'ruiz'} primaryText="Weekends" />
+                            <MenuItem value={666} primaryText="Weekly" />
                         </SelectField>
                     </Dialog>
                 </div>
