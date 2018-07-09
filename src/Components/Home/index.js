@@ -1,10 +1,19 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import ButtonFloat from './Modal/ButtonFloat';
+import Modaladd from './Modal/ModalAdd';
 
-class Home extends Component{
-    render(){
-        return(
-            <div className = "Home">
-            <h1>Home Page</h1>
+class Home extends Component {
+    render() {
+        return (
+            <div className="Home">
+
+                <MuiThemeProvider>
+                    <ButtonFloat />
+                    <Modaladd />
+                </MuiThemeProvider>
+                
+                <h1>Home Page</h1>
             </div>
         );
     }
