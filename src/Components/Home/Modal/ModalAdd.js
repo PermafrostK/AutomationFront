@@ -5,13 +5,13 @@ import FloatingActionButton from 'material-ui/FloatingActionButton';
 import ContentAdd from 'material-ui/svg-icons/content/add';
 import SelectField from 'material-ui/SelectField';
 import MenuItem from 'material-ui/MenuItem';
-import ButtonFloat from './ButtonFloat';
+
 
 export default class DialogExampleSimple extends React.Component {
 
     state = {
         open: false,
-        value: 1
+        value: 1 
     };
 
     handleChange = (event, index, value) => {
@@ -31,8 +31,7 @@ export default class DialogExampleSimple extends React.Component {
         console.log(this.state.value);
     };
 
-    render() {
-        <ButtonFloat />
+    render() {        
         const actions = [
             <FlatButton
                 label="Cancel"
