@@ -1,6 +1,8 @@
 import React from 'react';
 import TextField from 'material-ui/TextField';
-import {orange500, blue500, redA100} from 'material-ui/styles/colors';
+import { orange500, blue500, redA100, green500 } from 'material-ui/styles/colors';
+
+
 
 const styles = {
   errorStyle: {
@@ -10,7 +12,7 @@ const styles = {
     borderColor: redA100,
   },
   floatingLabelStyle: {
-    color: orange500,
+    color: green500 ,
   },
   floatingLabelFocusStyle: {
     color: blue500,
@@ -19,9 +21,8 @@ const styles = {
 
 const TextFields = () => (
   <div>
-
     <TextField
-      floatingLabelText="Styled Floating Label Text"
+      floatingLabelText={"Test"}
       floatingLabelStyle={styles.floatingLabelStyle}
       floatingLabelFocusStyle={styles.floatingLabelFocusStyle}
     />
