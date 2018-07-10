@@ -5,12 +5,13 @@ import FloatingActionButton from 'material-ui/FloatingActionButton';
 import ContentAdd from 'material-ui/svg-icons/content/add';
 import SelectField from 'material-ui/SelectField';
 import MenuItem from 'material-ui/MenuItem';
-import TextField from 'material-ui/TextField';
-import { orange500, blue500, redA100, green500 } from 'material-ui/styles/colors';
+import TextFields from './TextFields';
+import PropTypes from 'prop-types';
 
 
 var label;
 export default class DialogExampleSimple extends React.Component {
+
 
 
     state = {
@@ -18,6 +19,7 @@ export default class DialogExampleSimple extends React.Component {
         value: 0,
         show: false
     };
+
 
 
     handleChange = (event, index, value) => {
@@ -34,13 +36,20 @@ export default class DialogExampleSimple extends React.Component {
     };
 
     handledSubmit = () => {
-        console.log("sub")
-    }
 
+        var serialize = require('form-serialize');
+        var form = document.querySelector('#formText');
+        var str = serialize(form);
+        if (str==undefined||str==null||str.length<=0){
+            console.log("str");
+        }
+        console.log(str);
+    }
     handledChangeForm = (value) => {
+
         switch (value) {
             case 1:
-                label = "Get Url";
+                label=  "Get Url";
                 break;
             case 2:
                 label = "Name Div Click";
@@ -67,7 +76,7 @@ export default class DialogExampleSimple extends React.Component {
 
     };
 
-    render() {
+    render() {        
         const actions = [
             <FlatButton
                 label="Cancel"
@@ -82,6 +91,7 @@ export default class DialogExampleSimple extends React.Component {
             />,
         ];
         return (
+
             <div>
                 <div>
                     <FloatingActionButton onClick={this.handleOpen}>
@@ -106,7 +116,7 @@ export default class DialogExampleSimple extends React.Component {
                             </SelectField>
 
                             <div>
-                                {this.state.show ? <TextFields /> : null}
+                                {this.state.show ? <TextFields label={label} /> : null}
                             </div>
                         </form>
                     </Dialog>
@@ -115,31 +125,3 @@ export default class DialogExampleSimple extends React.Component {
         );
     }
 }
-
-
-
-const styles = {
-    errorStyle: {
-        color: orange500,
-    },
-    underlineStyle: {
-        borderColor: redA100,
-    },
-    floatingLabelStyle: {
-        color: green500,
-    },
-    floatingLabelFocusStyle: {
-        color: blue500,
-    },
-};
-
-const TextFields = () => (
-    <div>
-        <TextField id="uuu"
-            floatingLabelText={label}
-            floatingLabelStyle={styles.floatingLabelStyle}
-            floatingLabelFocusStyle={styles.floatingLabelFocusStyle}
-        />
-    </div>
-);
-
