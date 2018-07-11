@@ -10,16 +10,22 @@ var label;
 var label2;
 export default class Select extends React.Component {
     state = {
-        value: undefined
+        value: undefined,
+        textff: false,
+        textf: false
     };
 
     handleChange = (event, index, value) => {
         this.setState({ value });
         this.handleChangeInput(value);
     }
-
     handleChangeInput = (value) => {
+
+        this.setState({
+            textff: false
+        });
         switch (value) {
+
             case 1:
                 label = "Get Url";
                 break;
@@ -29,7 +35,9 @@ export default class Select extends React.Component {
             case 3:
                 label = "Name Div Text";
                 label2 = "Value 2 Send";
-                render(<TextF label={label2} />, document.getElementById('TextField2'));
+                this.setState({
+                    textff: true
+                });
                 break;
             case 4:
                 label = "Start Sleep Time";
@@ -37,17 +45,15 @@ export default class Select extends React.Component {
             case 5:
                 label = "Take ScreenShot Name";
                 break;
-            default:
-
-            break;
-
         }
-        render(<TextF label={label} />, document.getElementById('TextField'));
-
+        this.setState({
+            textf: true
+        });
     }
 
     render() {
         return (
+
             <div>
                 <SelectField floatingLabelText="Action" value={this.state.value} onChange={this.handleChange} >
                     <MenuItem value={1} primaryText="Send Url" />
@@ -56,8 +62,13 @@ export default class Select extends React.Component {
                     <MenuItem value={4} primaryText="Send Sleep" />
                     <MenuItem value={5} primaryText="Take A ScreenShot" />
                 </SelectField>
-                <div id="TextField"></div>
-                <div id="TextField2"></div>
+                <div id="TextField">
+                    {this.state.textf ? <TextF label={label} /> : false}
+                </div>
+                <div id="TextField2">
+                    {this.state.textff ? <TextF label={label2} /> : false}
+                </div>
+
             </div>
         );
     }

@@ -11,10 +11,6 @@ export default class TextFieldExampleControlled extends React.Component {
     static propTypes = {
         label: PropTypes.string.isRequired
     };
-
-    // constructor(props) {
-    //     super(props);
-    // }
     handleChange = (event) => {
         this.setState({
             value: event.target.value,
