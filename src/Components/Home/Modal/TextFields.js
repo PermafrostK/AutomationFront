@@ -1,38 +1,20 @@
 import React from 'react';
 import TextField from 'material-ui/TextField';
-import { orange500, blue500, redA100 } from 'material-ui/styles/colors';
+
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import getMuiTheme from 'material-ui/styles/getMuiTheme';
+import darkBaseTheme from 'material-ui/styles/baseThemes/darkBaseTheme';
 import PropTypes from 'prop-types';
 
 
-const styles = {
-    errorStyle: {
-        color: orange500,
-    },
-    underlineStyle: {
-        borderColor: redA100,
-    },
-    floatingLabelStyle: {
-        color: orange500,
-    },
-    floatingLabelFocusStyle: {
-        color: blue500,
-    },
-};
-export default class TextFields extends React.Component {
-
+export default class TextFieldExampleControlled extends React.Component {
     static propTypes = {
-        label: PropTypes.string.isRequired,
-
+        label: PropTypes.string.isRequired
     };
 
-    constructor(props) {
-        super(props);
-
-        this.state = {
-            value: undefined,
-        };
-    }
-
+    // constructor(props) {
+    //     super(props);
+    // }
     handleChange = (event) => {
         this.setState({
             value: event.target.value,
@@ -43,13 +25,13 @@ export default class TextFields extends React.Component {
         const { label } = this.props;
         return (
             <div>
-                <TextField
-                    floatingLabelText={label}
-                    floatingLabelStyle={styles.floatingLabelStyle}
-                    floatingLabelFocusStyle={styles.floatingLabelFocusStyle}
-                    onChange={this.handleChange}
-                    name="input"
-                />
+                <MuiThemeProvider muiTheme={getMuiTheme(darkBaseTheme)}>
+                    <TextField
+                        id="text-field-controlled"
+                        onChange={this.handleChange}
+                        floatingLabelText={label}
+                    />
+                </MuiThemeProvider>
             </div>
         );
     }
